@@ -28,8 +28,18 @@ const wholeDOBs = people.map((x) => new Date(x.DOB))
 console.log(wholeDOBs) //returns dobs as whole dates
 //using map to pass an arrow func that calls the 'x' temp var which looks for every instance of DOB and retruns it as a date using new Date() (otherwise is a string or numbers)
 
-//need to get the format right, either by finding the magic function which does that specifically or by dividing each M D Y and putting them back together
 
+
+
+
+
+
+
+
+
+
+
+//need to get the format right, either by finding the magic function which does that specifically or by dividing each M D Y and putting them back together
 DOBsMonth = wholeDOBs.map((x) => x.getMonth() + 1) //+1 needed cuz it's an index
 // console.log(DOBsMonth)
 DOBsDay = wholeDOBs.map((x) => x.getDate())
@@ -37,7 +47,7 @@ DOBsDay = wholeDOBs.map((x) => x.getDate())
 DOBsYear = wholeDOBs.map((x) => x.getFullYear())
 // console.log(DOBsYear)
 
-const fullDOBs = join
+// console.log(`${DOBsMonth} / ${DOBsDay} / ${DOBsYear}`) //puts every month, every day & year all at once
 
 
 
