@@ -22,12 +22,40 @@ const people = [
 // also I hate the mm dd yyyy format
 
 const [{DOB}] = people
-console.log(DOB) //returns the first dob
+// console.log(DOB) //returns the first dob
 
 const wholeDOBs = people.map((x) => new Date(x.DOB))
-console.log(wholeDOBs) //returns dobs as whole dates
+// console.log(wholeDOBs) //returns dobs as whole dates
 //using map to pass an arrow func that calls the 'x' temp var which looks for every instance of DOB and retruns it as a date using new Date() (otherwise is a string or numbers)
 
+const DOBs = wholeDOBs.map((x) => x.getMonth() + '/' + x.getDate() + '/' + x.getFullYear())
+// console.log(DOBs)
+//since wholeDOBs is an array, need to use map to put the right format to each element (x temp var + getmonth and etc to get the right format)
+
+
+//check if the persons would be > 30 today
+
+    //get the age according to each DOB
+    const isOver30 = DOBs.map((x) => {
+        if (x.getFullYear() > Date().getFullYear()){ //if year of birth is above 30, true
+            console.log(true)
+        }
+        else if (x.getMonth() > Date().getMonth()){
+            console.log(true)
+        }
+        else if (x.getDate() > Date().getDate()){
+            console.log(true)
+        }
+        else{
+            console.log(false)
+        }
+    })
+
+    console.log(isOver30)
+
+    //if the guy's born < 30 years ago return true (for now, then the name according to the index or something idk yet)
+    //else if the guy's born 30 years ago, if the month is < to the actual month right now, return true
+    //else if the guy's born 30 years ago at this month, check if day < actual day rn, return true
 
 
 
@@ -36,35 +64,26 @@ console.log(wholeDOBs) //returns dobs as whole dates
 
 
 
-
-
+// ↓ how I lost way too much time (mistakes, leads nowhere) ↓
 
 //need to get the format right, either by finding the magic function which does that specifically or by dividing each M D Y and putting them back together
-DOBsMonth = wholeDOBs.map((x) => x.getMonth() + 1) //+1 needed cuz it's an index
+// DOBsMonth = wholeDOBs.map((x) => x.getMonth() + 1) //+1 needed cuz it's an index
 // console.log(DOBsMonth)
-DOBsDay = wholeDOBs.map((x) => x.getDate())
+// DOBsDay = wholeDOBs.map((x) => x.getDate())
 // console.log(DOBsDay)
-DOBsYear = wholeDOBs.map((x) => x.getFullYear())
+// DOBsYear = wholeDOBs.map((x) => x.getFullYear())
 // console.log(DOBsYear)
 
-// console.log(`${DOBsMonth} / ${DOBsDay} / ${DOBsYear}`) //puts every month, every day & year all at once
-
-
-
+// console.log(`${DOBsMonth} / ${DOBsDay} / ${DOBsYear}`) //puts every month, every day & year all at once aaaaaah
 
 
 //get thecurrent date (M D Y)
-const currentWholeDate = new Date()
+// const currentWholeDate = new Date()
 // console.log(currentWholeDate)
 
-const currentMonth = currentWholeDate.getMonth()
-const currentDay = currentWholeDate.getDay() + 1
-const currentYear = currentWholeDate.getFullYear()
-const currentDate = `${currentMonth}/${currentDay}/${currentYear}`
-
+// const currentMonth = currentWholeDate.getMonth()
+// const currentDay = currentWholeDate.getDay() + 1
+// const currentYear = currentWholeDate.getFullYear()
+// const currentDate = `${currentMonth}/${currentDay}/${currentYear}`
 // console.log(currentDate)
-
-
-// 3) Get a list of the people's full name (firstName and lastName).
-// 4) Get a list of people in the array ordered from youngest to oldest.
-// 5) How many people are there in each department?
+//nope this is terrible, going back to the past
