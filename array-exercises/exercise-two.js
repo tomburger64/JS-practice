@@ -31,12 +31,13 @@ const wholeDOBs = people.map((x) => new Date(x.DOB))
 const DOBs = wholeDOBs.map((x) => x.getMonth() + '/' + x.getDate() + '/' + x.getFullYear())
 // console.log(DOBs)
 //since wholeDOBs is an array, need to use map to put the right format to each element (x temp var + getmonth and etc to get the right format)
+// MAKES DOBs A STRING!!!
 
 
 //check if the persons would be > 30 today
 
     //get the age according to each DOB
-    const isOver30 = DOBs.map((x) => {
+    const isOver30 = Date.parse(DOBs.map((x) => {
         if (x.getFullYear() > Date().getFullYear()){ //if year of birth is above 30, true
             console.log(true)
         }
@@ -49,7 +50,7 @@ const DOBs = wholeDOBs.map((x) => x.getMonth() + '/' + x.getDate() + '/' + x.get
         else{
             console.log(false)
         }
-    })
+    }))
 
     console.log(isOver30)
 
