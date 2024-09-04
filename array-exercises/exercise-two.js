@@ -2,23 +2,14 @@
 // 2) Who are the people that are currently older than 30?
 
 const people = [
-    { firstName: 'Sam', lastName: 'Hughes', DOB: '07/07/1978', department: 'Development', salary: '45000' },
-    { firstName: 'Terri', lastName: 'Bishop', DOB: '02/04/1989', department: 'Development', salary: '35000' },
-    { firstName: 'Jar', lastName: 'Burke', DOB: '11/01/1985', department: 'Marketing', salary: '38000' },
-    { firstName: 'Julio', lastName: 'Miller', DOB: '12/07/1991', department: 'Sales', salary: '40000' },
-    { firstName: 'Chester', lastName: 'Flores', DOB: '03/15/1988', department: 'Development', salary: '41000' },
-    { firstName: 'Madison', lastName: 'Marshall', DOB: '09/22/1980', department: 'Sales', salary: '32000' },
-    { firstName: 'Ava', lastName: 'Pena', DOB: '11/02/1986', department: 'Development', salary: '38000' },
-    { firstName: 'Gabriella', lastName: 'Steward', DOB: '08/26/1994', department: 'Marketing', salary: '46000' },
-    { firstName: 'Charles', lastName: 'Campbell', DOB: '09/04/1977', department: 'Sales', salary: '42000' },
-    { firstName: 'Tiffany', lastName: 'Lambert', DOB: '05/11/1990', department: 'Development', salary: '34000' },
-    { firstName: 'Antonio', lastName: 'Gonzalez', DOB: '03/24/1985', department: 'Office Management', salary: '49000' },
-    { firstName: 'Aaron', lastName: 'Garrett', DOB: '09/04/1985', department: 'Development', salary: '39000' },
+    { firstName: 'same', lastName: 'year', DOB: '01/01/1994', department: 'Development', salary: '45000' },
+    { firstName: 'same', lastName: 'month', DOB: '01/09/1994', department: 'Development', salary: '35000' },
+    { firstName: 'same', lastName: 'day', DOB: '04/09/1994', department: 'Marketing', salary: '38000' },
 ];
 
 // get everyone's dob
 // using date function & variants, substract current date (m d y format) with each dob
-// if dob >30 get the whole dude
+// if dob >30 get the name too
 // also I hate the mm dd yyyy format
 
 const [{DOB}] = people
@@ -33,30 +24,43 @@ const DOBs = wholeDOBs.map((x) => x.getMonth() + '/' + x.getDate() + '/' + x.get
 //since wholeDOBs is an array, need to use map to put the right format to each element (x temp var + getmonth and etc to get the right format)
 // MAKES DOBs A STRING!!!
 
+//I'll try to treat the data here and not after tring to put the dates together
+const isOver30 = wholeDOBs.map((x) => {
+    
+    //if bod year < current year - 30 (if > 30yo)
+    //if year = current year, if bod month < current month (if > past month of birth)
+    //then if month = current month, if bod day < current day (if > past day ob)
 
-//check if the persons would be > 30 today
+    if (x.getFullYear() < new Date().getFullYear() + 1 - 30){
+        // console.log(new Date().getFullYear() - 30)
+        console.log(x.getFullYear() + " dob")
+        console.log("est plus grand que 1994?")
+        console.log(x.getFullYear() < new Date().getFullYear() + 1 - 30)
 
-    //get the age according to each DOB
-    const isOver30 = Date.parse(DOBs.map((x) => {
-        if (x.getFullYear() > Date().getFullYear()){ //if year of birth is above 30, true
-            console.log(true)
-        }
-        else if (x.getMonth() > Date().getMonth()){
-            console.log(true)
-        }
-        else if (x.getDate() > Date().getDate()){
-            console.log(true)
-        }
-        else{
-            console.log(false)
-        }
-    }))
+        console.log("Sorry, you're old (year)")
+        console.log("---")
+    }
 
-    console.log(isOver30)
+    else if (x.getFullYear() === new Date().getFullYear() + 1 - 30 && x.getMonth() > new Date().getMonth()){
+        
+        console.log("Sorry, you're old (month)")
+        
+    }
 
-    //if the guy's born < 30 years ago return true (for now, then the name according to the index or something idk yet)
-    //else if the guy's born 30 years ago, if the month is < to the actual month right now, return true
-    //else if the guy's born 30 years ago at this month, check if day < actual day rn, return true
+    else if (x.getFullYear() === new Date().getFullYear() + 1 - 30 &&
+        x.getMonth() > new Date().getMonth() &&
+        x.getDate() < new Date().getDay() ){
+
+        console.log("Sorry, you're old (day)")
+        
+    }
+
+    //how to get the related name to the age its corresponding?
+    //auto icremented index I guess?
+    //yes I'm schizo talking
+})
+
+
 
 
 
@@ -88,3 +92,29 @@ const DOBs = wholeDOBs.map((x) => x.getMonth() + '/' + x.getDate() + '/' + x.get
 // const currentDate = `${currentMonth}/${currentDay}/${currentYear}`
 // console.log(currentDate)
 //nope this is terrible, going back to the past
+
+// is over 30? fail ↓
+
+//check if the persons would be > 30 today
+
+    //get the age according to each DOB
+    // const isOver30 = Date.parse(DOBs.map((x) => {
+    //     if (x.getFullYear() > Date().getFullYear()){ //if year of birth is above 30, true
+    //         console.log(true)
+    //     }
+    //     else if (x.getMonth() > Date().getMonth()){
+    //         console.log(true)
+    //     }
+    //     else if (x.getDate() > Date().getDate()){
+    //         console.log(true)
+    //     }
+    //     else{
+    //         console.log(false)
+    //     }
+    // }))
+
+    // console.log(isOver30)
+
+    //if the guy's born < 30 years ago return true (for now, then the name according to the index or something idk yet)
+    //else if the guy's born 30 years ago, if the month is < to the actual month right now, return true
+    //else if the guy's born 30 years ago at this month, check if day < actual day rn, return true
