@@ -2,22 +2,22 @@
 // 2) Who are the people that are currently older than 30?
 
 const people = [
-    { firstName: 'same', lastName: 'year', DOB: '01/01/1994', department: 'Development', salary: '45000' },
-    { firstName: 'same', lastName: 'month', DOB: '01/09/1994', department: 'Development', salary: '35000' },
-    { firstName: 'same', lastName: 'day', DOB: '04/09/1994', department: 'Marketing', salary: '38000' },
-];
+    { firstName: 'very old', lastName: 'person', DOB: '01/01/1900', department: 'Development', salary: '45000' },
 
-// get everyone's dob
-// using date function & variants, substract current date (m d y format) with each dob
-// if dob >30 get the name too
-// also I hate the mm dd yyyy format
+    { firstName: 'same', lastName: 'year', DOB: '01/01/1994', department: 'Development', salary: '45000' },
+    { firstName: 'same', lastName: 'month', DOB: '09/01/1994', department: 'Development', salary: '35000' },
+    { firstName: 'same', lastName: 'day', DOB: '09/05/1994', department: 'Marketing', salary: '38000' },
+
+    { firstName: 'very young', lastName: 'person', DOB: '01/01/2020', department: 'Marketing', salary: '38000' },
+];
+//MM DD YYYY
 
 const [{DOB}] = people
 // console.log(DOB) //returns the first dob
 
 const wholeDOBs = people.map((x) => new Date(x.DOB))
 // console.log(wholeDOBs) //returns dobs as whole dates
-//using map to pass an arrow func that calls the 'x' temp var which looks for every instance of DOB and retruns it as a date using new Date() (otherwise is a string or numbers)
+//using map to pass an arrow func that calls the 'x' temp var which looks for every instance of DOB and returns it as a date using new Date() (otherwise is a string or numbers)
 
 const DOBs = wholeDOBs.map((x) => x.getMonth() + '/' + x.getDate() + '/' + x.getFullYear())
 // console.log(DOBs)
@@ -30,29 +30,35 @@ const isOver30 = wholeDOBs.map((x) => {
     //if bod year < current year - 30 (if > 30yo)
     //if year = current year, if bod month < current month (if > past month of birth)
     //then if month = current month, if bod day < current day (if > past day ob)
+    //also detect if it's all = (birthday) I guess
 
-    if (x.getFullYear() < new Date().getFullYear() + 1 - 30){
-        // console.log(new Date().getFullYear() - 30)
-        console.log(x.getFullYear() + " dob")
-        console.log("est plus grand que 1994?")
-        console.log(x.getFullYear() < new Date().getFullYear() + 1 - 30)
+    if (x.getFullYear() < new Date().getFullYear() - 30){
 
-        console.log("Sorry, you're old (year)")
-        console.log("---")
+        console.log("Being born in " + x.getFullYear() + " makes you older than 30")
     }
 
-    else if (x.getFullYear() === new Date().getFullYear() + 1 - 30 && x.getMonth() > new Date().getMonth()){
+    else if (x.getFullYear() === new Date().getFullYear() - 30 && x.getMonth() < new Date().getMonth()){
         
-        console.log("Sorry, you're old (month)")
+        console.log("Being born on the " + (x.getMonth() + 1) + "th month of " + x.getFullYear() + " makes you older than 30")
         
     }
 
-    else if (x.getFullYear() === new Date().getFullYear() + 1 - 30 &&
-        x.getMonth() > new Date().getMonth() &&
+    else if (x.getFullYear() === new Date().getFullYear() - 30 &&
+        x.getMonth() === new Date().getMonth() &&
         x.getDate() < new Date().getDay() ){
 
-        console.log("Sorry, you're old (day)")
+        console.log("Being born on the " + x.getDate() + "th of " + (x.getMonth() + 1) + " " + x.getFullYear() + " makes you older than 30")        
+    }
+
+    else if (x.getFullYear() === new Date().getFullYear() - 30 &&
+        x.getMonth() === new Date().getMonth() &&
+        x.getDate() === new Date().getDay() + 1 ){
+
+        console.log("Being born on the " + x.getDate() + "th of " + x.getMonth() + " " + x.getFullYear() + " means you're turning 30 today ! Hbd")
         
+    }
+    else{
+        console.log("You're younger than 30 years old")
     }
 
     //how to get the related name to the age its corresponding?
