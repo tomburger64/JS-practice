@@ -1,4 +1,4 @@
-//https://www.youtube.com/watch?v=tFz502-LXU8&list=PLpc_YvcwbxaSX4QlwXZ_vjBAZA4cNgIxN&index=7
+// https://www.youtube.com/watch?v=tFz502-LXU8&list=PLpc_YvcwbxaSX4QlwXZ_vjBAZA4cNgIxN&index=7
 // 2) Who are the people that are currently older than 30?
 
 //MM DD YYYY
@@ -11,7 +11,7 @@ const people = [
     { firstName: 'Plankton', lastName: 'Sheldon J.', DOB: '09/04/1994', department: 'Development', salary: '35000' },
     { firstName: 'Eugene Harold', lastName: 'Krabs', DOB: new Date(), department: 'Marketing', salary: '38000' },
 
-    { firstName: 'Jennifer Oliva', lastName: 'Cheeks', DOB: '01/01/2020', department: 'Marketing', salary: '38000' },
+    { firstName: 'Jennifer Oliva', lastName: 'Cheeks', DOB: '01/01/2000', department: 'Marketing', salary: '38000' },
 ];
 
 const wholeDOBs = people.map((x) => {
@@ -131,3 +131,13 @@ const isOver30 = wholeDOBs.map((x) => {
 // console.log(DOBs)
 //since wholeDOBs is an array, need to use map to put the right format to each element (x temp var + getmonth and etc to get the right format)
 // MAKES DOBs A STRING!!! (yup, guess who forgot about it)
+
+console.log("-----")
+
+//correction
+
+//didn't think about filtering
+//filters any year that'd be superior to 30
+console.log(people.filter(person => new Date().getFullYear() - new Date(person.DOB).getFullYear() > 30))
+
+// yup that's it, the guy explained it was just a quick solution to get the idea while mentionning you gotta also take in account the month and day
