@@ -30,6 +30,7 @@ console.log(DOBs.sort())
 
 
 
+
 //fails, aka why I lost my time
 
 // console.log(people.map((x) => {
