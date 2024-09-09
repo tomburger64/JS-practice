@@ -42,6 +42,3 @@ console.log(people.map(({firstName, lastName}) => `${firstName} ${lastName}`))
 // using spread opperator, making a new object and fullName propriety
 console.log(people.map(person => ({...person, fullName: `${person.firstName} ${person.lastName}`})))
 //↑ this one doesn't check if the person's got a first name and last name though
-
-// 4) Get a list of people in the array ordered from youngest to oldest.
-// 5) How many people are there in each department?
