@@ -12,3 +12,5 @@ You can of course just check the code directly from the files, there's always my
 Index is in the main folder, and the exercises are in their respective folders:
 - array-exercises folder which contains some exercises with array manipulation
 - dom-exercises which is pretty self-explanatory
+
+.
