@@ -18,21 +18,58 @@ const people = [
 // 4) Get a list of people in the array ordered from youngest to oldest.
 //had the wrong approach, you don't apply sort to elements as they're being worked with map(), you apply sort directly
 
-//get an array of the dobs and the name of the guy
-let DOBs = people.map((x) => {
-    let fullName = [x.firstName + " " + x.lastName]
+//I had to cheat for this one
+//I did try to do something with Date to make DOB a date (and not stay a string) at some point, but it wasn't as direct as this and didn't work out
+//I'm pretty sure I never put ".DOB" after a and b too
 
-    return [x.DOB]
-})
-
-console.log(DOBs.sort())
-
-
+const sorted = people.sort((a, b) => new Date(b.DOB) - new Date(a.DOB))
+console.log(sorted)
+//a compares itself to b, 2 values from the DOB proprety in theo object in the ppl array
+//convert a and b into dates so that they can be properly compared, and sort using b - a
 
 
+console.log("-----")
+//correction
+console.log(people.sort((personA, personB) => new Date(personA.DOB) - new Date(personB.DOB)))
+//basically the same as above
 
-//fails, aka why I lost my time
+
+
+
+//fails, aka why I lost my time ↓
+
+
+
+// let DOBs = people.map((x) => x.DOB)
+// console.log(DOBs)
+
+
 
 // console.log(people.map((x) => {
 //     return new Date(x.DOB).sort()
 // }))
+
+
+
+// let sorted = DOBs.sort((a, b) => {
+//     let yearA = new Date(a).getFullYear()
+//     let yearB = new Date(b).getFullYear()
+
+//     yearA.localeCompare(yearB) //← doesn't work
+
+//     a.localeCompare(b)
+// })
+// console.log(sorted)
+
+
+
+// let sorted = DOBs.sort((a, b) => {
+//     let yearA = new Date(a).getFullYear()
+//     let yearB = new Date(b).getFullYear()
+
+//     yearA - yearB
+//     //shows the right results but idk what to o afterwards
+
+//     // a.localeCompare(b)
+// })
+// console.log(sorted)
