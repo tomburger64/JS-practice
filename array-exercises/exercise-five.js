@@ -18,22 +18,31 @@ const people = [
 
 // 5) How many people are there in each department?
 
-//had to cheat and ask what functions would be used to solve this
+// 1 make an array of deps
 
-//reduce(), filter(), forEach(), map()
+// 2 make a function
+// 3 make a var that filters each value of the array
+// 4 look for that "each value" to see how many times it's in the array
 
-// reduce to accumulate and keep the count of each dep
-// filter to filter the name of what's been accumulated
-// might not have to use the others
+const deps = people.map((x) => x.department)
 
-let deps = people.reduce((accumulator, element) => {
-    let elements = element.department
-    
-    console.log(elements,)
-})
-console.log(deps)
+function howManyDeps(){
 
+    //for each array element, returns that element
+    let department = deps.map((department) => department)
 
+    //looks for filterElement in the array, return filterElement and the amount of times it's filtered in the array
+
+    deps.filter(department => {
+        //if department is there more than once in the array
+        //had to cheat to know you can use .length to know how many times department is in the array
+        if (){
+            
+        }
+    })
+
+}
+howManyDeps()
 
 
 
