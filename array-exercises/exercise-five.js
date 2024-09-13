@@ -52,6 +52,14 @@ depCount()
 // took too much time doing this to end up doing the braining part with AI so I'll just do more exercises to train later
 
 
+console.log("---")
+//correction
+//one line man strikes again
+
+console.log(people.reduce((accumulator, person) => ({...accumulator, [person.department]: accumulator[person.department] + 1 || 1}), {}))
+
+//using reduce, returns an object containing the accumulator's previous value and the person's dep
+// after the ":", indicates to access the person.dep inside the accumulator object and add 1 to its value, OR set it to 1 if it doesn't have a value yet
 
 
 
