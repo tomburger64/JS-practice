@@ -1,5 +1,5 @@
 After an automated coding test, I realised my JS level was really weak (I am a beginner after all)
-That made me get into studying some native javascript exercises (DOM / array manipulation), as even if learning more stuff can attract more recruiters, it doesn't stay afloat very long if there's no depth behind it
+That made me get into studying some native javascript exercises (DOM / array manipulation), as even if learning more stuff can attract more recruiters, it doesn't stay afloat very long if there's no depth below it
 
 I should mention, I am active on this repo even if it doesn't show in my commit activity on my profile. Don't mind check the "last updated" time next to the folders / files you're looking for.
 Doing this to improve my js skills and for fun
