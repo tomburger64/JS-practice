@@ -23,3 +23,14 @@ const orders = [
 ];
 
 // 1) Get a list of the orders for the customer with the ID 234 that have not been delivered.
+
+const cust234 = orders.filter((x) => x.customerId === '234' && x.delivered === false)
+console.log(cust234)
+//filter the x temporary variable which returns every object that has "customerId === '234'" and "x.delivered === false"
+
+console.log("---")
+//correction
+const correction = orders.filter(order => order.customerId === '234' && !order.delivered)
+console.log(correction)
+//didn't know you could just call the temp var without parentheses in an arrow function
+//basically the same outside of more the better optimized writing for the "delivered === false" part
