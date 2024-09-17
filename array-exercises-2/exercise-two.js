@@ -31,3 +31,12 @@ console.log(prices)
 
 //last step, sinc everything is an array inside an array, need to use map again to then apply reduce and accumulate each price array's value
 console.log(prices.map((x) => x.reduce((accumulator, price) => accumulator + price)))
+
+
+
+console.log("---")
+//correction
+console.log(orders.map(order => ({order, orderTotal: order.items.reduce((acc, item) => acc + item.price, 0)})))
+//adds orderTotal to each "order" object and also uses reduce to sum the price values
+
+//more advanced and compact, and actually returns the whole object with the price sum which I did not do (woops)
