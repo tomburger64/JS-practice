@@ -27,15 +27,24 @@ console.log("should be 'true false true true true'")
 
 
 
-const deliveriesData = orders.map((x) => x.delivered === true) //returns true for every instance of delivered = true
+const deliveriesData = orders.map((x) => x.delivered) //returns true for every instance of delivered = true
 console.log(deliveriesData)
 
+//if array includes false, return have not all been delivered
+function hasDelivered(){
+    if (deliveriesData.includes(false)){
+        console.log("All orders DIDN'T get delivered")
+    }
+    else{
+        console.log("All orders DID get delivered")
+    }
+}
+// hasDelivered()
 
-//same thing but reverse, returns true when has not been delivered
-const hasDelivered = deliveriesData.map((x) => x === false)
-console.log(hasDelivered)
+//wanted to make it an arrow function but I struggled to use includes() as an arrow function 
 
-
+//attempt at doing it in a single line
+//status: NOT WORKING
 
 
 
