@@ -39,12 +39,12 @@ function hasDelivered(){
         console.log("All orders DID get delivered")
     }
 }
-// hasDelivered()
+hasDelivered()
 
-//wanted to make it an arrow function but I struggled to use includes() as an arrow function 
+//wanted to make it an arrow function but I struggled to use includes() as an arrow function
 
 //attempt at doing it in a single line
-//status: NOT WORKING
+//status: gave up, can't figure out how to make arrow functions with includes() and every()
 
 
 
