@@ -48,6 +48,12 @@ hasDelivered()
 
 
 
+console.log("---")
+//correction
+//I knew it was gonna be something darn simple
+
+console.log(orders.every(order => order.delivered))
+//for every order.delivered status, every() checks if they're the same value and returns true or false
 
 
 
