@@ -15,10 +15,10 @@ const orders = [
 //what shows if there's an order has been made precisely
 // > if there's 1 >= objects in the items array
 
-console.log(orders.map((x) => x.items.length >= 1))
+// console.log(orders.map((x) => x.items.length >= 1))
 //works for every order, returns true or false in order if one order doesn't have any object in items
 
-console.log(orders.map((x) => x.customerId === '123' && x.items.length >= 1))
+// console.log(orders.map((x) => x.customerId === '123' && x.items.length >= 1))
 //works but still returns a value for the others
 
 const orderId = '123'
