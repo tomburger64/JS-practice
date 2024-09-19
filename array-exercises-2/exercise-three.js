@@ -1,4 +1,4 @@
-// yt link here
+// https://youtu.be/QsUSmmEf1JE?si=lQD5hZj6kX4SYWUR&t=225
 
 const orders = [
     { orderId: '123', customerId: '123', deliveryDate: '01-01-2020', delivered: true, items: [
@@ -53,7 +53,7 @@ console.log("---")
 //I knew it was gonna be something darn simple
 
 console.log(orders.every(order => order.delivered))
-//for every order.delivered status, every() checks if they're the same value and returns true or false
+//for every order.delivered value, every() checks if they're the same value and returns true or false
 
 
 
