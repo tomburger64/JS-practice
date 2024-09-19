@@ -28,7 +28,6 @@ console.log(order123.map((hasOrder) => hasOrder.items.length >= 1 ? `order ${ord
 
 
 
-
 //fails ↓
 
 // const hasOrder = orders.items.map((x) => x.orderId === true )
