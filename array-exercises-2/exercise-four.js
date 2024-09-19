@@ -28,6 +28,18 @@ console.log(order123.map((hasOrder) => hasOrder.items.length >= 1 ? `order ${ord
 
 
 
+console.log("---")
+//correction
+console.log(orders.some(order => order.customerId === '123'))
+//returns true if the id '123' is in the data
+//didn't know some(), too bad
+
+//also would it make sense to have a customer ID without having any orders from the customer?
+//if the customer has an account maybe ? Unless it's like data from in-store purchases directly but then why make this "does this customer have any orders?" if they all do have some
+
+
+
+
 //fails ↓
 
 // const hasOrder = orders.items.map((x) => x.orderId === true )
