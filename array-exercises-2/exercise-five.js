@@ -23,3 +23,29 @@ const orders = [
 ];
 
 // 5) Have any products with an id of 123 been sold?
+
+// returns the objects elements that have a productId of 123 inside each object in the orders
+// if they're here, they're in an order
+// won't go deeper with that problem haha (see comments above fails in exercise 4)
+
+console.log(orders.map((x) => x.items.filter((id) => id.productId === '123')))
+//hey I did it in one line this time
+
+
+
+console.log("---")
+//correction
+console.log(orders.reduce((acc, order) => acc + order.items.reduce((acc, item) => acc + (item.productId === '123'), 0), 0))
+// looked around for different answers on the video guy's git repo, a lot of different answers possible, less or more detailed
+// would've done detailed in this exercise if I didn't already done it for some past exercises and got ratio'd with a one line solution that just works
+
+// tldr, as long as it works accordingly to what's asked, I'll consider it done
+
+
+
+//fails ↓
+
+// const productSold = orders.filter((order) => order.items.productId === '123')
+// console.log(productSold)
+
+// console.log(orders.map((x) => x.items && x.items.productId === '123'))
