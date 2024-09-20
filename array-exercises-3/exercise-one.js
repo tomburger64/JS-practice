@@ -30,3 +30,12 @@ const comments = [
 //careful there's 2 Madisons
 
 console.log(users.filter((info) => info.firstName === 'Madison' && info.lastName === 'Marshall'))
+//no fails yay
+
+
+
+console.log("---")
+// correction
+console.log(users.find(user => user.firstName === 'Madison' && user.lastName === 'Marshall'))
+
+//didn't think of using find(), not used to using it yet, I'll try to think about it in the future
