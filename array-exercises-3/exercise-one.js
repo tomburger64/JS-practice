@@ -27,3 +27,6 @@ const comments = [
 ];
 
 // 1) What is Madison Marshall's user id?
+//careful there's 2 Madisons
+
+console.log(users.filter((info) => info.firstName === 'Madison' && info.lastName === 'Marshall'))
