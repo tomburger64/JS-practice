@@ -1,3 +1,5 @@
+// https://youtu.be/4K7kN4b1-ok?si=ExVJCfIQtjkPPtWk&t=284
+
 const users = [
     { id: '88f24bea-3825-4237-a0d1-efb6b92d37a4', firstName: 'Sam', lastName: 'Hughes' },
     { id: '2a35032d-e02b-4508-b3b5-6393aff75a53', firstName: 'Terri', lastName: 'Bishop' },
@@ -25,3 +27,48 @@ const comments = [
 ];
 
 // 4) Add the user's first and last name to each comment in the comments array
+
+// some users commented a few times on their account, not just once
+
+
+
+// for each object in comments,
+// make a variable that's going through each comment and gets its id
+// add the names corresponding to each comment's id
+
+function addNames(){
+    const eachComm = comments.map(comment => {
+
+        let comm = users.find(user => user.id === comment.userId) // get the comm user id and its corresponding id
+
+        
+
+
+        return comm
+    })
+
+    return eachComm
+}
+console.log(addNames())
+
+
+
+
+
+
+
+
+
+
+// fails ↓
+
+// function addNames(){
+    
+//     const userIds = users.find(who => who.id === comments.find(comment => comment.userId))
+//     console.log(userIds)
+//     // finds a user id thats = to a comment id
+//     // now do that for each comment, one by one
+//     // make something that returns both objects of the 2 arrays with the same id
+// }
+
+// addNames()
