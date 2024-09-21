@@ -25,3 +25,8 @@ const comments = [
 ];
 
 // 2) Who wrote the first comment (assuming the first comment is in position 0 of the comments array)
+
+const whosComm = users.find((who) => who.id === comments[0].userId)
+console.log(whosComm)
+// finds the user id that's = to the userid of the first comment
+//wanted to go more step by step but didn't need it
