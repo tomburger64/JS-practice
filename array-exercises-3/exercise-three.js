@@ -34,3 +34,10 @@ console.log(whoDid)
 
 // single line
 // console.log(comments.find(comment => comment.text === 'OK great thanks'), users.find(who => who.id === comm.userId))
+
+
+
+console.log("---")
+console.log(users.find(user => user.id === comments.find(comment => comment.text === 'OK great thanks').userId))
+// finds the two ids that are = simultaneously on both arrays
+// basically the same as i did, but more compact, I wanted to do it more step by step
