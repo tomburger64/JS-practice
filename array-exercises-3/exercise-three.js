@@ -1,3 +1,5 @@
+// https://youtu.be/4K7kN4b1-ok?si=vAWMjKUCAyaRD0lR&t=204
+
 const users = [
     { id: '88f24bea-3825-4237-a0d1-efb6b92d37a4', firstName: 'Sam', lastName: 'Hughes' },
     { id: '2a35032d-e02b-4508-b3b5-6393aff75a53', firstName: 'Terri', lastName: 'Bishop' },
@@ -25,3 +27,10 @@ const comments = [
 ];
 
 // 3) Which user commented 'OK great thanks'?
+
+const comm = comments.find(comment => comment.text === 'OK great thanks')
+const whoDid = users.find(who => who.id === comm.userId)
+console.log(whoDid)
+
+// single line
+// console.log(comments.find(comment => comment.text === 'OK great thanks'), users.find(who => who.id === comm.userId))
