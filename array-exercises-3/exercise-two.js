@@ -1,3 +1,5 @@
+// https://youtu.be/4K7kN4b1-ok?si=nz2xJ3zq1JOCiiGL&t=155
+
 const users = [
     { id: '88f24bea-3825-4237-a0d1-efb6b92d37a4', firstName: 'Sam', lastName: 'Hughes' },
     { id: '2a35032d-e02b-4508-b3b5-6393aff75a53', firstName: 'Terri', lastName: 'Bishop' },
@@ -30,3 +32,10 @@ const whosComm = users.find((who) => who.id === comments[0].userId)
 console.log(whosComm)
 // finds the user id that's = to the userid of the first comment
 //wanted to go more step by step but didn't need it
+
+
+
+console.log("---")
+// correction
+console.log(users.find(user => user.id === comments[0].userId))
+//same as I did, but I didn't need to put parentheses around my "who" temp var
