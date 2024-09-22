@@ -30,26 +30,18 @@ const comments = [
 
 // some users commented a few times on their account, not just once
 
-
-
-// for each object in comments,
-// make a variable that's going through each comment and gets its id
-// add the names corresponding to each comment's id
-
 function addNames(){
-    const eachComm = comments.map(comment => {
+    let commentsId = comments.forEach(comment => comment.userId)
 
-        let comm = users.find(user => user.id === comment.userId) // get the comm user id and its corresponding id
-
-        
-
-
-        return comm
-    })
-
-    return eachComm
+    return users.find(user => user.id === commentsId ? user.id : "error")
 }
+
 console.log(addNames())
+
+
+
+
+
 
 
 
@@ -72,3 +64,35 @@ console.log(addNames())
 // }
 
 // addNames()
+
+
+//-
+
+// for each object in comments,
+// make a variable that's going through each comment and gets its id
+// add the names corresponding to each comment's id
+
+// function addNames(){
+//     const eachComm = comments.map(comment => {
+
+//         let comm = users.find(user => user.id === comment.userId) // get the comm user id and its corresponding id
+
+        
+
+
+//         return comm
+//     })
+
+//     return eachComm
+// }
+// console.log(addNames())
+
+
+
+// - 
+
+// //first thing we want to do is push so let's try to push first
+// let test = comments.push(x => x.userId === users.id ? users.firstName : "error")
+// //we want to push the names that have the same id as the comment
+
+// console.log(test)
