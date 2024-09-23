@@ -30,15 +30,25 @@ const comments = [
 
 // some users commented a few times on their account, not just once
 
+//had to cheat, didn't have the right approach
 function addNames(){
-    let commentsId = comments.forEach(comment => comment.userId)
+    //for each individual comment
+    comments.forEach(comment => {
+        let user = users.find(user => user.id === comment.userId)
+        // ↑ find the same user id in the users array that's in the comments array
 
-    return users.find(user => user.id === commentsId ? user.id : "error")
+        //if user has a value (if the above equation worked)
+        if (user){
+            // adds the firstName and lastname proprety to each comment object
+            comment.firstName = user.firstName
+            comment.lastName = user.lastName
+            //used to think you had to use push(), forgot we're talking array of objects, not just arrays
+        }
+    })
+
+    return comments
 }
-
 console.log(addNames())
-
-
 
 
 
@@ -96,3 +106,25 @@ console.log(addNames())
 // //we want to push the names that have the same id as the comment
 
 // console.log(test)
+
+
+// -
+// let userNames = users.forEach(user => user.id === commentsId ? commentsId.push(user.firstName + user.lastName) : "error")
+
+// -
+// let commentsId = comments.map(ID => ID.userId)
+
+
+// -
+// last try before cheating
+// function addNames(){
+
+//     let test = comments.map(comm => {
+//         if (users.find(user => user.id === comm.userId)){
+//             comments.push(users.join(user => user.firstName))
+//             return comments
+//         }
+//     })
+
+//     return test
+// }
