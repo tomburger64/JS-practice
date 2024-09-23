@@ -52,6 +52,15 @@ console.log(addNames())
 
 
 
+console.log("---")
+//correction
+console.log(comments.map(comment => {
+    // new array made (map())
+    const {firstName, lastName} = users.find(user => user.id === comment.userId)
+    // deconstructs the firstName and lastName if the user id that's = to the comment's id
+    return {...comment, firstName, lastName}
+    // for each comment, returns the contents of the comment using a spread opp, adn adding the names
+}))
 
 
 
