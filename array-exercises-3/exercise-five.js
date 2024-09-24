@@ -26,16 +26,21 @@ const comments = [
 
 // 5) Get a list of the users who haven't commented
 
-// gonna use the same method as the correction of last ex
-// map() the comments array
+// gonna use the same approach as the correction of last ex
+// map() the users array
 // make a new var inside that finds the id in both arrays
-const haventCommed = comments.map(comment => {
-    const sameUser = users.find(user => user.id === comment.userId)
+const commented = comments.map(comment => {
+    
+    //find ppl who commented (if id in both arrays)
+    const theyCommented = users.find(user => user.id === comment.userId)
 
-    //remove those from the array
-    sameUser
-
-    return sameUser
+    return theyCommented
 })
 
-console.log(haventCommed)
+console.log(commented)
+
+// make a new array that's every user not in commented
+
+//had to cheat for this one, didn't think of include nor the syntax to use '!' in front of commented, wanted tu use "!=="
+const didntComment = users.filter(user => !commented.includes(user))
+console.log(didntComment)
