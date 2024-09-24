@@ -25,3 +25,17 @@ const comments = [
 ];
 
 // 5) Get a list of the users who haven't commented
+
+// gonna use the same method as the correction of last ex
+// map() the comments array
+// make a new var inside that finds the id in both arrays
+const haventCommed = comments.map(comment => {
+    const sameUser = users.find(user => user.id === comment.userId)
+
+    //remove those from the array
+    sameUser
+
+    return sameUser
+})
+
+console.log(haventCommed)
