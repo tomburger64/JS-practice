@@ -1,3 +1,5 @@
+// https://youtu.be/4K7kN4b1-ok?si=WT3qydMZ_EfwojtJ&t=374
+
 const users = [
     { id: '88f24bea-3825-4237-a0d1-efb6b92d37a4', firstName: 'Sam', lastName: 'Hughes' },
     { id: '2a35032d-e02b-4508-b3b5-6393aff75a53', firstName: 'Terri', lastName: 'Bishop' },
@@ -52,4 +54,4 @@ console.log("---")
 console.log(users.filter(user => !comments.find(comment => comment.userId === user.id)))
 // directly filter the user array
 // return every comment that does NOT ('!') have its id in both arrays
-// was on the right way at the beginning but I need to practice more to get the logic some more
+// was on the right way at the beginning but I need to practice more to get the logic some more 
