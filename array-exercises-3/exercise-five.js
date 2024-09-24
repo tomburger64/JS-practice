@@ -44,3 +44,12 @@ console.log(commented)
 //had to cheat for this one, didn't think of include nor the syntax to use '!' in front of commented, wanted tu use "!=="
 const didntComment = users.filter(user => !commented.includes(user))
 console.log(didntComment)
+
+
+
+console.log("---")
+// correction
+console.log(users.filter(user => !comments.find(comment => comment.userId === user.id)))
+// directly filter the user array
+// return every comment that does NOT ('!') have its id in both arrays
+// was on the right way at the beginning but I need to practice more to get the logic some more
