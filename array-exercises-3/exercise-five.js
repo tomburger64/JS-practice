@@ -1,3 +1,5 @@
+// https://youtu.be/4K7kN4b1-ok?si=WT3qydMZ_EfwojtJ&t=374
+
 const users = [
     { id: '88f24bea-3825-4237-a0d1-efb6b92d37a4', firstName: 'Sam', lastName: 'Hughes' },
     { id: '2a35032d-e02b-4508-b3b5-6393aff75a53', firstName: 'Terri', lastName: 'Bishop' },
@@ -26,16 +28,30 @@ const comments = [
 
 // 5) Get a list of the users who haven't commented
 
-// gonna use the same method as the correction of last ex
-// map() the comments array
+// gonna use the same approach as the correction of last ex
+// map() the users array
 // make a new var inside that finds the id in both arrays
-const haventCommed = comments.map(comment => {
-    const sameUser = users.find(user => user.id === comment.userId)
+const commented = comments.map(comment => {
+    
+    //find ppl who commented (if id in both arrays)
+    const theyCommented = users.find(user => user.id === comment.userId)
 
-    //remove those from the array
-    sameUser
-
-    return sameUser
+    return theyCommented
 })
 
-console.log(haventCommed)
+console.log(commented)
+
+// make a new array that's every user not in commented
+
+//had to cheat for this one, didn't think of include nor the syntax to use '!' in front of commented, wanted tu use "!=="
+const didntComment = users.filter(user => !commented.includes(user))
+console.log(didntComment)
+
+
+
+console.log("---")
+// correction
+console.log(users.filter(user => !comments.find(comment => comment.userId === user.id)))
+// directly filter the user array
+// return every comment that does NOT ('!') have its id in both arrays
+// was on the right way at the beginning but I need to practice more to get the logic some more 
