@@ -3,6 +3,20 @@
 
 
 
+// 2 ways of making a promise:
+// - "manually" :
+const manualPromise = new Promise((resolve, reject) => {"blah"})
+
+// - using a promise related function, like fetch (and then manipulmating it however)
+function gotData(){console.log(data);}
+const smartPromise = fetch(API);
+smartPromise.then(gotData)
+// then (once smartPromise is done fetching) returns its callback fn
+
+// all promise related functions can be found here → https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise
+
+
+
 // example used:
 
 const API = "APIlink"
@@ -23,15 +37,11 @@ function gotErr(err){
 // catch has a callback fn that runs when the promise is rejected
 
 // api's an api link
-// then new var that's a promise because of the function following it (has to be a promise function)
+// new var that's a promise because the function following it makes it one
+// then() used with the gotData callback fn which returns when the promise is successful
+// catch() with gotErr callback fn which returns when it's unsuccessful
 
-// 2 ways of making a promise:
-// - "manually" :
-const manualPromise = new Promise((resolve, reject) => {"blah"})
+// then returns its callback when a promise is true (unless 2 args specified, where it's "ifTrue, ifFalse")
+// catch returns its callback when a promise is false
 
-// - using a promise related function, like fetch (and then manipulmating it however)
-function gotData(){console.log(data);}
-const smartPromise = fetch(API);
-smartPromise.then(gotData)
-// then 
-// all promise related functions can be found here → https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise
+// WHY USE CATCH => catch works will callback event if then() itself doesn't work
