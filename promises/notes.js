@@ -44,4 +44,4 @@ function gotErr(err){
 // then returns its callback when a promise is true (unless 2 args specified, where it's "ifTrue, ifFalse")
 // catch returns its callback when a promise is false
 
-// WHY USE CATCH => catch works will callback event if then() itself doesn't work
+// WHY USE CATCH => catch works and will callback even if then() itself doesn't work
