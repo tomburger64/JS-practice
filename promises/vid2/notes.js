@@ -24,6 +24,12 @@ function delay(time){
     // }
 
     return new Promise((resolve, reject) => {
+
+        // if the delay is nan, returns the promise? Make a new error (object) with the wanted message
+        if (isNaN(time)){
+            reject(new Error('delay requires a valid number'));
+        }
+
         setTimeout(resolve, time);
     });
     // setTimeout(sayHello, time);
