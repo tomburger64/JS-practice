@@ -9,12 +9,22 @@ function setup(){
     .catch((err) => console.error(err));
 }
 
+
+
 // like setTimeout but returns a promise
 function delay(time){
-    return new Promise();
+
+    // what happens if the promise is resolved or rejected (passed as an anonymous => func below)
+    // function dealWithPromise(resolve, reject){
+    //     setTimeout(resolve, time)
+    // }
+
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve, time);
+    });
     // setTimeout(sayHello, time);
 }
 
-function sayHello(){
-    createImageBitmap('Hello');
-}
+// function sayHello(){
+//     createImageBitmap('Hello');
+// }
