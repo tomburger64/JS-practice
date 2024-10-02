@@ -1,6 +1,6 @@
 // not running this code, these are just notes for myself
 // https://youtu.be/QO4NXhWo_NM?si=MqBq6XcEGNmsejKx
-
+// guy doing the vid uses "p5" whoch allows for noCanvas() or createP() (used below)
 
 
 // 2 ways of making a promise:
