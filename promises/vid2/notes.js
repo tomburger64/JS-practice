@@ -3,5 +3,10 @@
 // I'll copy anyway (I learn by practicing), but know that some elements will be specific to p5
 
 function setup(){
-    
+    noCanvas(); // p5 func
+    setTimeout(sayHello, 1000);
+}
+
+function sayHello(){
+    createImageBitmap('Hello');
 }
