@@ -4,7 +4,12 @@
 
 function setup(){
     noCanvas(); // p5 func
-    setTimeout(sayHello, 1000);
+    delay(1000);
+}
+
+// like setTimeout but returns a promise
+function delay(time){
+    setTimeout(sayHello, time);
 }
 
 function sayHello(){
