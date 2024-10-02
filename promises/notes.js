@@ -79,15 +79,15 @@ fetch(API)
 })
 .catch(err => console.log(err));
 
+// fetch the api
+// if initial promise (↑) is successful, convert it into json (using json() )
+// if init promise is successful (after ↑), "json" is the name of the parameter, takes on the value of the previous then(), creates <p> tag and returns the giphyAPI fetched (url) with the word added, to make a new request to the api
+// if init promise successful then convert that response into json again
+// if init promise successful then creates a bitmap (optimized way of encoding an image) of the data object in the json we have (it's from the api)
+// if init promise fails, console log the error
+
+
+
 // WHY USE JSON() ?
 // json() returns the data as a JS object
-// simply returning it using then returns "raw" data, which can be binary or text
-
-// fetch the api
-// convert it into json
-// create a paragraph (createP) by specifying wwhat to put in (json.word)
-// (createP is probably deprecated)
-// fetch the api again
-// FINISH COMMENTING THIS ↑↑↑↑↑↑↑↑
-
-// not taking notes on what he does from this time stamp 18:40 because it apparently got errors and is mostly specific to the api showed as an example, when the goal is to understand (according to the guy from the video)
+// simply returning it using then returns "raw" data (http req), which can be binary or text
