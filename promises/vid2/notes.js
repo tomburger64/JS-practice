@@ -4,7 +4,9 @@
 
 function setup(){
     noCanvas(); // p5 func
-    delay(1000);
+    delay(1000)
+    .then(() => createImageBitmap('hello'))
+    .catch((err) => console.error(err));
 }
 
 // like setTimeout but returns a promise
