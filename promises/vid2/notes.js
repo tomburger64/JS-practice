@@ -7,6 +7,10 @@ function setup(){
     delay(1000)
     .then(() => createImageBitmap('hello'))
     .catch((err) => console.error(err));
+
+    delay('string test')
+    .then(() => createImageBitmap('hello'))
+    .catch((err) => console.error(err))
 }
 
 
