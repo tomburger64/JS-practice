@@ -11,7 +11,8 @@ function setup(){
 
 // like setTimeout but returns a promise
 function delay(time){
-    setTimeout(sayHello, time);
+    return new Promise();
+    // setTimeout(sayHello, time);
 }
 
 function sayHello(){
