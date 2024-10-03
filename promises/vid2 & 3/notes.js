@@ -1,4 +1,5 @@
-// https://youtu.be/AwyoVjVXnLk?si=01Rt7juUrJyPeh_8
+// vid 2 https://youtu.be/AwyoVjVXnLk?si=01Rt7juUrJyPeh_8
+// vid 3 https://youtu.be/XO77Fib9tSI?si=j5t0w-cVW-vwa-C_
 // reminder: guy in the video uses p5 which allows for some newx functions like noCanvas() or createP()
 // I'll copy anyway (I learn by practicing), but know that some elements will be specific to p5
 
