@@ -4,13 +4,37 @@
 
 function setup(){
     noCanvas(); // p5 func
+
     delay(1000)
+    .then(() => createImageBitmap('hello'))
+    .catch((err) => console.error(err));
+
+    delayES8(1000)
     .then(() => createImageBitmap('hello'))
     .catch((err) => console.error(err));
 
     delay('string test')
     .then(() => createImageBitmap('hello'))
     .catch((err) => console.error(err))
+}
+
+
+
+// for now, forget about the "delay" function written below
+// async functions can be run at the same time as others when used with await
+async function delayES8(time){
+
+    // this funct returns a promise
+    // await: will wait for the promise to return
+    // needs to  be in an async function
+    await delay(time);
+    
+    // can also await for other functions / promises
+    await somethingElse();
+
+    // this allows to avoid using then() and catch() all the time
+    let val = await somethingElseElse();
+    return val;
 }
 
 
@@ -29,12 +53,14 @@ function delay(time){
         // reminder that it'll appear as an error because of console.error, not console.log or smnthng else
         if (isNaN(time)){
             reject(new Error('delay requires a valid number'));
-        }
+        } else {
 
-        setTimeout(resolve, time);
+        setTimeout(resolve, time);}
     });
     // setTimeout(sayHello, time);
 }
+
+
 
 // function sayHello(){
 //     createImageBitmap('Hello');
