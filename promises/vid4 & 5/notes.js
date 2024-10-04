@@ -8,8 +8,19 @@ function setup(){
 
     noCanvas(); //p5 func
 
+
+
     // using Promise.all to keep the right order when calling several funcs
-    let promises = [wordGIF(3), wordGIF(4), wordGIF(5)] // can also use a loop to call them
+    // let promises = [wordGIF(3), wordGIF(4), wordGIF(5)] // can also use a loop to call them
+
+    // using a loop
+    let promises = []; //create empty array
+    for (let i = 0; i < 100; i++){
+        promises.push(wordGIF(4)) //make it push the func a 100 times
+    }
+    // again, if it fails at just one iteration, it'll all fail
+
+
     Promise.all(promises) //need to call promise.all with an array directly or indirectly (here indirectly, through "promises")
     .then(results => {
         // then if promises are all true
