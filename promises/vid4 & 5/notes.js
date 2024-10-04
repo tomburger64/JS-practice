@@ -8,6 +8,21 @@ function setup(){
 
     noCanvas(); //p5 func
 
+    // using Promise.all to keep the right order when calling several funcs
+    let promises = [wordGIF(3), wordGIF(4), wordGIF(5)] // can also use a loop to call them
+    Promise.all(promises) //need to call promise.all with an array directly or indirectly (here indirectly, through "promises")
+    .then(results => {
+        // then if promises are all true
+        for (let i = 0; i < results.length; i++){ // make a loop
+            createP(results[i].word); // at every iteration, places the word / img at the i index, hence in the "right order"
+            createImg(results[i].img);
+        }
+    })
+    .catch(err => console.error(err));
+    // problem with this method is if only 1 of the promises fails, you get an error
+
+
+
     // added in vid5, specify amount of chars called in wordnik api
     wordGIF(3).then(results => {
         // if the wordGIF func returns as true, then create <p></p> with the word obj prop and <img></img> with the img object prop
