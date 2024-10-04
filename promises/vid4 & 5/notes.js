@@ -22,6 +22,12 @@ function setup(){
         createImg(results.img); // p5 function
     })
     .catch(err => console.error(err));
+    
+    wordGIF(5).then(results => {
+        createP(results.word); // p5 function
+        createImg(results.img); // p5 function
+    })
+    .catch(err => console.error(err));
 
 
 
