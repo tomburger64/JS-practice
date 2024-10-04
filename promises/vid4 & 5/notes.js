@@ -1,17 +1,27 @@
-// https://youtu.be/chavThlNz3s?si=2iDenitxB0B7N6u9
+// https://youtu.be/chavThlNz3s?si=2iDenitxB0B7N6u9 v4
+// https://youtu.be/01RTj1MWec0?si=EnpFYCYISxFU_Yxr v5
 
 const API = "APIlink"
 
 function setup(){
 
-    noCanvas();
+    noCanvas(); //p5 func
 
     wordGIF().then(results => {
+        // if the wordGIF func returns as true, then create <p></p> with the word obj prop and <img></img> with the img object prop
         createP(results.word); // p5 function
         createImg(results.img); // p5 function
+        return wordGIF();
+        // return wordGIF func to use it twice ↓ (done in vid5)
+    })
+    .then(results => {
+        // again, if wordGIF's promise is successful ↓
+        // results contains the last wordGIF return right above ↑
+        createP(results.word); // p5 function
+        createImg(results.img); // p5 function)
+        // creates another p and img tag with a new word and image
     })
     .catch(err => console.error(err));
-
 }
 
 // new async function (variant of oldWordGIF() below ↓ )
@@ -37,7 +47,7 @@ async function wordGIF(){
 
 
 
-// reminder: change this ↓ into an async func (done above ↑)
+// reminder: changing this ↓ into an async func (done above ↑)
 function oldWordGIF(){
     fetch(API)
     .then(response => response.json())
