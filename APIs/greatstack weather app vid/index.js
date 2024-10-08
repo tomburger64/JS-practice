@@ -28,6 +28,10 @@ async function checkWeather(){
     // convert the response in json using json()
     let data = await response.json();
 
-    console.log(data);
+    // link content to the html elements (that have the corresponding classes)
+    document.querySelector(".temp").innerHTML = data.main.temp + '°c';
+    document.querySelector(".city").innerHTML = data.name;
+    document.querySelector(".humidity").innerHTML = data.main.humidity;
+    document.querySelector(".wind").innerHTML = data.wind.speed;
 }
 checkWeather();

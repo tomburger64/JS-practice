@@ -106,7 +106,7 @@ body{
 
 .details{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     margin-top: 50px;
