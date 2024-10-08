@@ -1,0 +1,10 @@
+// I'm supposed to do this in a script tag, but I'd rather do it in a proper file
+
+// https://openweathermap.org/current
+// I won't leave my API key for all to see as this is a public repo on git
+
+// if you wanna try it out, you gotta make an acc at https://openweathermap.org/
+// then go to the api section and select the "current weather data" docs (free to use as long as you have an acc made)
+
+// to make a "default" call with the API
+// https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
