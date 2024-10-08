@@ -5,6 +5,8 @@
 
 // if you wanna try it out, you gotta make an acc at https://openweathermap.org/
 // then go to the api section and select the "current weather data" docs (free to use as long as you have an acc made)
+// your acc's api keys are there https://home.openweathermap.org/api_keys
+// please note that it can take "a few hours" for the key to work if you just made your acc (took me about 20 mins)
 
 // to make a "default" call with the API
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
