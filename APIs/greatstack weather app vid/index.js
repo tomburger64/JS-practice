@@ -29,7 +29,7 @@ async function checkWeather(){
     let data = await response.json();
 
     // link content to the html elements (that have the corresponding classes)
-    document.querySelector(".temp").innerHTML = data.main.temp + '°c';
+    document.querySelector(".temp").innerHTML = data.main.temp;
     document.querySelector(".city").innerHTML = data.name;
     document.querySelector(".humidity").innerHTML = data.main.humidity;
     document.querySelector(".wind").innerHTML = data.wind.speed;
