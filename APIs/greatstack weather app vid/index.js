@@ -10,3 +10,24 @@
 
 // to make a "default" call with the API
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+
+// - - - - - - - - - - - - - - - - - - -
+
+// first define the key and the basic api url removing the key calling part
+const apiKey = "";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=paris&units=metric";
+
+
+
+// make an async function
+async function checkWeather(){
+    // first fetch the api and wait for its response
+    const response = await fetch(apiUrl + `&appid=${apiKey}`);
+
+    // convert the response in json using json()
+    let data = await response.json();
+
+    console.log(data);
+}
+checkWeather();
