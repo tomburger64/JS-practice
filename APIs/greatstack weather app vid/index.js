@@ -16,14 +16,20 @@
 
 // first define the key and the basic api url removing the key calling part
 const apiKey = "";
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=paris&units=metric";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+// to select the form input
+// didn't know, but selecting works just like in css, can call whole tags after other classes / ids / tags...
+const searchbox = document.querySelector(".search input");
+const searchBtn = document.querySelector(".search button");
 
 
 
 // make an async function
-async function checkWeather(){
+async function checkWeather(city){
     // first fetch the api and wait for its response
-    const response = await fetch(apiUrl + `&appid=${apiKey}`);
+    // also create the query link that's fetched with the wanted content
+    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
 
     // convert the response in json using json()
     let data = await response.json();
@@ -36,4 +42,9 @@ async function checkWeather(){
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
 }
-checkWeather();
+
+
+
+searchBtn.addEventListener("click", () => {
+    checkWeather(searchbox.value);
+})

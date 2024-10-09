@@ -20,6 +20,12 @@ body{
   line-height: 1.3;
 
   min-height: 100vh;
+  
+  /* centering the weather card (exclusive to this project) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -50px;
 }
   
 a{ /* to avoid the default link styling every time */
