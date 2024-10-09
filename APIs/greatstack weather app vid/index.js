@@ -29,9 +29,11 @@ async function checkWeather(){
     let data = await response.json();
 
     // link content to the html elements (that have the corresponding classes)
-    document.querySelector(".temp").innerHTML = data.main.temp;
+    // also hard coding the units
+    // also rounding up the temp value
+    document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
     document.querySelector(".city").innerHTML = data.name;
-    document.querySelector(".humidity").innerHTML = data.main.humidity;
-    document.querySelector(".wind").innerHTML = data.wind.speed;
+    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+    document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
 }
 checkWeather();

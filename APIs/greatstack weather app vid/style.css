@@ -104,6 +104,10 @@ body{
     margin-top: -10px;
 }
 
+#main-icon{
+  margin-left: 120px;
+}
+
 .details{
     display: flex;
     justify-content: space-between;
