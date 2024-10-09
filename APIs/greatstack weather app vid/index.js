@@ -23,6 +23,9 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
 const searchbox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 
+// name speaks for itself
+const weatherIcon = document.querySelector(".weather-icon")
+
 
 
 // make an async function
@@ -41,6 +44,25 @@ async function checkWeather(city){
     document.querySelector(".city").innerHTML = data.name;
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+    // changing the icon depending on the weather
+    // [0] is where the "main" weather is
+    // src = the source
+    if (data.weather[0].main == "Clouds"){
+        weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/4834/4834559.png"
+    }
+    else if (data.weather[0].main == "Clear"){
+        weatherIcon.src = "https://static-00.iconduck.com/assets.00/weather-clear-symbolic-icon-511x512-zfj6vb21.png"
+    }
+    else if (data.weather[0].main == "Rain"){
+        weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+    }
+    else if (data.weather[0].main == "Drizzle"){
+        weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/6142/6142570.png"
+    }
+    else if(data.weather[0].main == "Mist"){
+        weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/4005/4005901.png"
+    }
 }
 
 
@@ -48,3 +70,10 @@ async function checkWeather(city){
 searchBtn.addEventListener("click", () => {
     checkWeather(searchbox.value);
 })
+
+// weather icon links
+// clear https://static-00.iconduck.com/assets.00/weather-clear-symbolic-icon-511x512-zfj6vb21.png
+// cloudy https://cdn-icons-png.flaticon.com/512/4834/4834559.png
+// drizzly https://cdn-icons-png.flaticon.com/512/6142/6142570.png
+// misty https://cdn-icons-png.flaticon.com/512/4005/4005901.png
+// snowy https://cdn-icons-png.flaticon.com/512/414/414866.png
