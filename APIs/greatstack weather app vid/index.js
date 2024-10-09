@@ -74,7 +74,9 @@ async function checkWeather(city){
 
 
         // making the display switch to block "when entering a query" (actually when the function is run)
+        // also hiding the error msg
         document.querySelector(".weather").style.display = "block";
+        document.querySelector(".error").style.display = "none";
     }
 
 }
