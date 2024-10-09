@@ -136,3 +136,22 @@ body{
     font-size: 28px;
     margin-top: -6px;
 }
+
+
+
+/* gets changed to block when enetering a query */
+.weather{
+  display: none;
+}
+
+
+/* error message, only shown when there's an error*/
+.error{
+  text-align: center;
+  margin-left: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  color: red;
+
+  display: none;
+}

@@ -34,35 +34,49 @@ async function checkWeather(city){
     // also create the query link that's fetched with the wanted content
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
 
-    // convert the response in json using json()
-    let data = await response.json();
+    // error msg display
+    // .status = fetch response code
+    if (response.status === 404){
+        document.querySelector(".error").style.display = "block";
+    }
+    else{
 
-    // link content to the html elements (that have the corresponding classes)
-    // also hard coding the units
-    // also rounding up the temp value
-    document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
-    document.querySelector(".city").innerHTML = data.name;
-    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-    document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+        // convert the response in json using json()
+        let data = await response.json();
 
-    // changing the icon depending on the weather
-    // [0] is where the "main" weather is
-    // src = the source
-    if (data.weather[0].main == "Clouds"){
-        weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/4834/4834559.png"
+        // link content to the html elements (that have the corresponding classes)
+        // also hard coding the units
+        // also rounding up the temp value
+        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+        // changing the icon depending on the weather
+        // [0] is where the "main" weather is
+        // src = the source
+        if (data.weather[0].main === "Clouds"){
+            weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/4834/4834559.png";
+        }
+        else if (data.weather[0].main === "Clear"){
+            weatherIcon.src = "https://static-00.iconduck.com/assets.00/weather-clear-symbolic-icon-511x512-zfj6vb21.png";
+        }
+        else if (data.weather[0].main === "Rain"){
+            weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/4150/4150897.png";
+        }
+        else if (data.weather[0].main === "Drizzle"){
+            weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/6142/6142570.png";
+        }
+        else if(data.weather[0].main === "Mist"){
+            weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/4005/4005901.png";
+        }
+
+
+
+        // making the display switch to block "when entering a query" (actually when the function is run)
+        document.querySelector(".weather").style.display = "block";
     }
-    else if (data.weather[0].main == "Clear"){
-        weatherIcon.src = "https://static-00.iconduck.com/assets.00/weather-clear-symbolic-icon-511x512-zfj6vb21.png"
-    }
-    else if (data.weather[0].main == "Rain"){
-        weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-    }
-    else if (data.weather[0].main == "Drizzle"){
-        weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/6142/6142570.png"
-    }
-    else if(data.weather[0].main == "Mist"){
-        weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/4005/4005901.png"
-    }
+
 }
 
 
