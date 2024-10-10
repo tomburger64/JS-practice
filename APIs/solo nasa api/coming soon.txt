@@ -1,0 +1,3 @@
+Since I just learned promises, async functions and apis, I'll try to make a new website / page for some API(s) while also using React
+
+For now I'll finish the React course I started during summer as I stopped at props (idk states and hooks rn), then I'll start this project
