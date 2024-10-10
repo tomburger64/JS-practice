@@ -15,6 +15,7 @@
 // - - - - - - - - - - - - - - - - - - -
 
 // first define the key and the basic api url removing the key calling part
+// also querying here to use the metric sys
 const apiKey = "";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
