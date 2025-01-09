@@ -1,4 +1,4 @@
-After an automated coding test, I realised my JS level was really weak (I am a beginner after all)
+After an automated coding test, I realised my JS level was really weak despite having spent 2 years in an IT school, that ended up teaching not enough back-end / programmation at all.
 That made me get into studying some native javascript exercises (DOM / array manipulation), as even if learning more stuff can attract more recruiters, it doesn't stay afloat very long if there's no depth below it
 
 Don't mind check the "last updated" time next to the folders / files you're looking for.
